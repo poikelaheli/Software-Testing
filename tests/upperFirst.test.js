@@ -1,7 +1,7 @@
 // Import upperFirst method
 import upperFirst from '../src/upperFirst';
 
-describe('upperFirst method', () => {
+describe('Unit tests for upperFirst method', () => {
   test('capitalizes the first letter of a string', () => {
     expect(upperFirst('hello')).toBe('Hello');
     expect(upperFirst('world')).toBe('World');

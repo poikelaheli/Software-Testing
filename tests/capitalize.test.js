@@ -1,7 +1,7 @@
 // Importi capitalize method
 import capitalize from "../src/capitalize";
 
-describe('capitalize method', () => {
+describe('Unit tests for capitalize method', () => {
   test('capitalize the first letter of a string', () => {
     expect(capitalize('hello')).toBe('Hello');
     expect(capitalize('day')).toBe('Day');

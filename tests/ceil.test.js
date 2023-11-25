@@ -1,7 +1,7 @@
 // Import ceil method
 import ceil from '../src/ceil';
 
-describe('ceil method', () => {
+describe('Unit tests for ceil method', () => {
   // Test cases for rounding to the nearest whole number
   test('rounds up to the nearest whole number', () => {
     expect(ceil(5.3)).toBe(6);

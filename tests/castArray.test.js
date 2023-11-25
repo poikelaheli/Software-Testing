@@ -1,7 +1,7 @@
 // Import castArray method
 import castArray from "../src/castArray";
 
-describe('castArray method', () => {
+describe('Unit tests for castArray method', () => {
   // Test cases for casting valid values to arrays
   test('casts valid value to array', () => {
     expect(castArray(3)).toBe([3]);
