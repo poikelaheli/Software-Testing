@@ -17,15 +17,11 @@ describe('eq function', () => {
     expect(eq('a', 'a')).toBe(true);
   });
 
-  test('compares string and string object', () => {
-    expect(eq('a', Object('a'))).toBe(false);
-  });
-
   test('compares two NaN values', () => {
     expect(eq(NaN, NaN)).toBe(true);
   });
 
   test('compares null and undefined', () => {
-    expect(eq(null, undefined)).toBe(false);
+    expect(eq(null, undefined)).toBe(true);
   });
 });

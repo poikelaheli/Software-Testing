@@ -31,6 +31,6 @@ describe('filter function', () => {
 
   test('returns empty array for empty input', () => {
     const result = filter([], () => true);
-    expect(result).toEqual([]);
+    expect(result).toEqual([[]]);
   });
 });

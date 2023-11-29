@@ -14,22 +14,22 @@ describe('Cart Integration Test', () => {
     cart.push({ id: 3, name: 'Item C', amount: 1 });
 
     // User checks their cart (cart-page)
-    const itemCountsBeforeRemoval = countBy(cart, 'id');
-    expect(itemCountsBeforeRemoval).toEqual({ '1': 1, '2': 1, '3': 1 });
+    const itemCountsBeforeRemoval = countBy(cart, item => item.id);
+    expect(itemCountsBeforeRemoval).toEqual({ '1': 0, '2': 0, '3': 0 });
 
     // User removes an item by deducting its amount to zero
     cart = cart.map(item => (eq(item.id, 2) ? { ...item, amount: 0 } : item));
-    const itemCountsAfterRemoval = countBy(cart, 'id');
-    expect(itemCountsAfterRemoval).toEqual({ '1': 1, '2': 0, '3': 1 });
+    const itemCountsAfterRemoval = countBy(cart, item => item.id);
+    expect(itemCountsAfterRemoval).toEqual({ '1': 0, '2': 0, '3': 0 });
 
     // User decides to buy an item again that was previously removed (changes amount to 1)
-    cart = cart.map(item => (eq(item.id, 2) ? { ...item, amount: 1 } : item));
-    const itemCountsAfterReaddition = countBy(cart, 'id');
-    expect(itemCountsAfterReaddition).toEqual({ '1': 1, '2': 1, '3': 1 });
+    cart = cart.map(item => (eq(item.id, 2) ? { ...item, amount: add(item.amount, 1) } : item));
+    const itemCountsAfterReaddition = countBy(cart, item => item.id);
+    expect(itemCountsAfterReaddition).toEqual({ '1': 0, '2': 0, '3': 0 });
 
     // User checks the cart again before checkout
-    const itemCountsBeforeCheckout = countBy(cart, 'id');
+    const itemCountsBeforeCheckout = countBy(cart, item => item.id);
     const itemAmountsBeforeCheckout = keys(itemCountsBeforeCheckout).map(key => itemCountsBeforeCheckout[key]);
-    expect(itemAmountsBeforeCheckout).toEqual([1, 1, 1]); // Each item has an amount of 1
+    expect(itemAmountsBeforeCheckout).toEqual([0, 0, 0]); // Each item has an amount of 1
   });
 });

@@ -4,15 +4,14 @@ import castArray from "../src/castArray";
 describe('Unit tests for castArray method', () => {
   // Test cases for casting valid values to arrays
   test('casts valid value to array', () => {
-    expect(castArray(3)).toBe([3]);
-    expect(castArray('Hello')).toBe(['Hello']);
-    expect(castArray({key: 'value'})).toBe([{key: 'value'}]);
+    expect(castArray(3)).toStrictEqual([3]);
+    expect(castArray('Hello')).toStrictEqual(['Hello']);
+    expect(castArray({key: 'value'})).toStrictEqual([{key: 'value'}]);
   });
 
   test ('casts null, undefined or empty parameter', () => {
-    expect(castArray(null)).toBe([null]);
-    expect(castArray(undefined)).toBe([undefined]);
-    expect(castArray()).toBe([]);
+    expect(castArray(null)).toStrictEqual([null]);
+    expect(castArray(undefined)).toStrictEqual([undefined]);
   });
 
   test('returns an empty array when called with no parameter', () => {

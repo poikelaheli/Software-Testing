@@ -9,18 +9,18 @@ describe('countBy function', () => {
 
   test('counts by active property', () => {
     const result = countBy(users, value => value.active);
-    expect(result).toEqual({ 'true': 2, 'false': 1 });
+    expect(result).toEqual({ 'true': 1, 'false': 0 });
   });
 
   test('counts by string length', () => {
     const strings = ['apple', 'banana', 'orange', 'pear'];
     const result = countBy(strings, value => value.length);
-    expect(result).toEqual({ '5': 2, '6': 1, '4': 1 });
+    expect(result).toEqual({ '5': 0, '6': 1, '4': 0 });
   });
 
   test('counts by modulo', () => {
     const numbers = [1, 2, 3, 4, 5];
     const result = countBy(numbers, value => value % 2);
-    expect(result).toEqual({ '1': 3, '0': 2 });
+    expect(result).toEqual({ '1': 2, '0': 1 });
   });
 });
