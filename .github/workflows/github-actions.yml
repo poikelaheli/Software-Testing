@@ -24,7 +24,7 @@ jobs:
         cache: 'npm'
     - name: npm install, make test-coverage
       run: |
-        npm install
+        npm install --save-dev coveralls
         npm test
     - name: Coveralls
       uses: coverallsapp/github-action@v2
