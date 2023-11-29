@@ -27,8 +27,7 @@ jobs:
         npm install --save-dev coveralls @babel/core @babel/preset-env babel-jest esm jest
         npm test
     - name: Coveralls
-      uses: coverallsapp/github-action@v2
+      uses: coverallsapp/github-action@main
       with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: coverage.lcov
+          github-token: ${{ secrets.GITHUB_TOKEN }}git
       
