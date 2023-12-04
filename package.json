@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest --coverage && coveralls < coverage/lcov.info && repo_token: $COVERALLS_REPO_TOKEN > ./.coveralls.yml && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "test": "jest --coverage && coveralls < coverage/lcov.info && -–reporter=text-lcov –reporter=lcov && repo_token: ${{COVERALLS_REPO_TOKEN}} > ./.coveralls.yml && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "author": "",
   "license": "MIT",
