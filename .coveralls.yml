@@ -1,1 +1,1 @@
-repo_token: ${COVERALLS_REPO_TOKEN}  and cat ./coverage/lcov.info 
+repo_token: ${COVERALLS_REPO_TOKEN}
