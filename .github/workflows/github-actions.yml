@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
@@ -21,7 +21,6 @@ jobs:
       uses: actions/setup-node@main
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
     - name: npm install, run tests
       run: |
         npm install --save-dev coveralls @babel/preset-env babel-jest esm jest
@@ -33,4 +32,13 @@ jobs:
       with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: coverage/lcov.info
+
+  finish:
+    needs: test
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Coveralls Finished
+      uses: coverallsapp/github-action@main
+
       
