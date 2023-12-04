@@ -5,9 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "nyc -- -reporter=html --reporter=text jest --coverage",
-    "coverage" : "nyc report -- -reporter=text-lcov",
-    "test2": "set NODE_ENV=test && jest --coverage && type ./coverage/lcov.info && report --reporter=text-lcov| coveralls"
+    "test": "set NODE_ENV=test && jest --coverage && type ./coverage/lcov.info && report --reporter=text-lcov| coveralls"
   },
   "author": "",
   "license": "MIT",
