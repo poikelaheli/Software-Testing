@@ -23,12 +23,15 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, run tests
       run: |
+        npm ci
         npm install --save-dev coveralls @babel/preset-env babel-jest esm jest
         npm test
     - name: Coveralls
       uses: coverallsapp/github-action@main
       env: 
+          NODE_COVERALLS_DEBUG: 1
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+          COVERALLS_GIT_BRANCH: ${{ github.ref }}
       with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: coverage/lcov.info
