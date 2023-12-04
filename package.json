@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "set NODE_ENV=test && jest --coverage",
-    "coverage": "set NODE_ENV=test && type ./coverage/lcov.info | coveralls"
+    "coverage": "NODE_ENV=test cat ./coverage/lcov.info | coveralls"
   },
   "author": "",
   "license": "MIT",
@@ -26,6 +26,7 @@
       "global": {
         "lines": 60
       }
-    }
+    },
+    "displayName": "Jest tests"
   }
 }
