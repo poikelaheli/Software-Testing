@@ -24,7 +24,7 @@ jobs:
     - name: npm install, run tests
       run: |
         npm ci
-        npm install --save-dev coveralls @babel/preset-env babel-jest esm jest
+        npm install --save-dev nyc coveralls @babel/preset-env babel-jest esm jest
         npm run test
     - name: Coveralls
       uses: coverallsapp/github-action@v2.2.3
