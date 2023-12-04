@@ -26,15 +26,14 @@ jobs:
         npm ci
         npm install --save-dev nyc coveralls @babel/preset-env babel-jest esm jest
         npm run test
-    - name: Debug LCOV file
-      run: cat ./coverage/lcov.info
+        cat ./coverage/lcov.info
+        npm run coverage
     - name: Coveralls
       uses: coverallsapp/github-action@v2.2.3
       env: 
           NODE_COVERALLS_DEBUG: 1
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
           COVERALLS_GIT_BRANCH: ${{ github.ref }}
-      run: npm run coverage
       with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: coverage/lcov.info
