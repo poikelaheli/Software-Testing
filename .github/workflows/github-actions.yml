@@ -27,7 +27,7 @@ jobs:
         npm install --save-dev coveralls @babel/preset-env babel-jest esm jest
         npm test
     - name: Coveralls
-          uses: coverallsapp/github-action@v2.2.3
+      uses: coverallsapp/github-action@v2.2.3
       env: 
           NODE_COVERALLS_DEBUG: 1
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
@@ -42,6 +42,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Coveralls Finished
-        uses: coverallsapp/github-action@v2.2.3
+      uses: coverallsapp/github-action@v2.2.3
 
       
