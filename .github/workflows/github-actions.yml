@@ -16,18 +16,18 @@ jobs:
         node-version: [14.x, 16.x]
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@main
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@main
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: npm install, make test-coverage
+    - name: npm install, run tests
       run: |
-        npm install --save-dev coveralls @babel/core @babel/preset-env babel-jest esm jest
+        npm install --save-dev coveralls @babel/preset-env babel-jest esm jest
         npm test
     - name: Coveralls
       uses: coverallsapp/github-action@main
       with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}git
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       
