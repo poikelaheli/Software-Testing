@@ -24,7 +24,7 @@ jobs:
         cache: 'npm'
     - name: npm install, run tests
       run: |
-        npm ci --save-dev coveralls @babel/preset-env babel-jest esm jest
+        npm install --save-dev coveralls @babel/preset-env babel-jest esm jest
         npm test
     - name: Coveralls
       uses: coverallsapp/github-action@main
