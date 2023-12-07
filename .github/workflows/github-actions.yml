@@ -23,7 +23,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, run tests
       run: |
-        npm ci
         npm install --save-dev nyc coveralls @babel/preset-env babel-jest esm jest
         npm run test
         cat ./coverage/lcov.info
