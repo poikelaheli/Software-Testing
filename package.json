@@ -23,6 +23,7 @@
     "testEnvironment": "node",
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
+    "coveragePathIgnorePatterns": ["./src/.internal"],
     "coverageThreshold": {
       "global": {
         "lines": 60
