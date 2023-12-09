@@ -24,7 +24,7 @@ jobs:
     - name: npm install, run tests
       run: |
         npm install --save-dev nyc coveralls @babel/preset-env babel-jest esm jest
-        npm run test
+        npm run testLinux
         cat ./coverage/lcov.info
         npm run coverage
     - name: Coveralls
