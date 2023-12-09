@@ -7,6 +7,8 @@
   "scripts": {
     "testLinux": "NODE_ENV=test jest --coverage",
     "testWindows": "set NODE_ENV=test && jest --coverage",
+    "unitTestLinux": "NODE_ENV=test jest --coverage --testPathIgnorePatterns \"./tests/addNewProductsToTheSite.test.js\" \"./tests/addOrRemoveProducts.test.js\" \"./tests/filteringProducts.test.js\"",
+    "unitTestWindows": "set NODE_ENV=test && jest --coverage --testPathIgnorePatterns \"./tests/addNewProductsToTheSite.test.js\" \"./tests/addOrRemoveProducts.test.js\" \"./tests/filteringProducts.test.js\"",
     "coverage": "NODE_ENV=test cat ./coverage/lcov.info"
   },
   "author": "",
