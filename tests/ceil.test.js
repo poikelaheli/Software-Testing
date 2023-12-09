@@ -39,7 +39,7 @@ describe('Unit tests for ceil method', () => {
 
   test('returns NaN for invalid input', () => {
     expect(ceil('abc')).toBeNaN();
-    expect(ceil(null)).toBe(0);
+    expect(ceil(null)).toBeNaN();
   });
 
   test('handles precision parameter not being a number', () => {
